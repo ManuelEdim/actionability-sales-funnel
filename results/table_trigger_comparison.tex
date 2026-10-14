@@ -1,0 +1,15 @@
+\begin{table}
+\caption{Headroom targeted by alternative trigger policies}
+\begin{tabular}{lrrrrr}
+\toprule
+policy & trigger\_rate & mean\_score\_triggered & mean\_headroom\_triggered & kappa\_slope & observed\_conversion\_triggered \\
+\midrule
+friction (declared Balabit construction) & 0.300 & 0.620 & 0.380 & 0.114 & 0.622 \\
+random at matched rate & 0.300 & 0.524 & 0.476 & 0.143 & 0.523 \\
+lowest model score at matched rate & 0.300 & 0.251 & 0.749 & 0.225 & 0.211 \\
+highest model score at matched rate & 0.300 & 0.774 & 0.226 & 0.068 & 0.729 \\
+flags only: tier >= 2 (own rate) & 0.143 & 0.648 & 0.352 & 0.050 & 0.649 \\
+all sessions (reference) & 1.000 & 0.524 & 0.476 & 0.476 & 0.524 \\
+\bottomrule
+\end{tabular}
+\end{table}

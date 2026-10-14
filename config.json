@@ -1,0 +1,15 @@
+{
+  "random_seed": 42,
+  "validation_fraction": 0.20,
+  "oof_folds": 5,
+  "class_weight": null,
+  "metric_bootstrap": 1000,
+  "bootstrap_resamples": 2000,
+  "ece_bins": 10,
+  "trigger_quantile": 0.70,
+  "assumed_effect_grid": [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30],
+  "friction_weights": {"jitter": 0.6, "velocity": 0.4},
+  "tier_percentile_bands": [[0.0, 0.1667], [0.1667, 0.3333], [0.3333, 0.5], [0.5, 0.6667], [0.6667, 0.8333], [0.8333, 1.0]],
+  "normalisation_quantile": 0.99,
+  "balabit": {"max_velocity_px_s": 10000}
+}

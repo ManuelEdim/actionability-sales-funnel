@@ -1,0 +1,13 @@
+\begin{table}
+\caption{Holdout discrimination across availability assumptions}
+\begin{tabular}{lrrlrrr}
+\toprule
+Specification & Features & ROC-AUC & ROC 95\% CI & PR-AUC & Precision & Recall \\
+\midrule
+leaked (final + delivery detail) & 16 & 0.927 & [0.920, 0.933] & 0.896 & 0.863 & 0.987 \\
+final, lenient (15 features) & 15 & 0.737 & [0.725, 0.748] & 0.704 & 0.681 & 0.716 \\
+baseline + basket (8 features) & 8 & 0.732 & [0.721, 0.744] & 0.695 & 0.677 & 0.730 \\
+baseline only (5 features) & 5 & 0.576 & [0.563, 0.588] & 0.574 & 0.550 & 0.813 \\
+\bottomrule
+\end{tabular}
+\end{table}

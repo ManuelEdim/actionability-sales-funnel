@@ -1,0 +1,21 @@
+{
+  "max_abs_refit_difference": 0.028132508195562622,
+  "sign_agreement": true,
+  "validation_coefficients": {
+    "loc_uk": 1.1135955197783238,
+    "returning_user": 0.2947549303761931,
+    "device_mobile": -0.3444899267594615,
+    "device_computer": 0.2598934656877791,
+    "device_tablet": 0.08391923804389233,
+    "basket_add_detail": 1.1840186783227058,
+    "basket_add_list": 0.7810221373014837,
+    "basket_icon_click": 0.9755615430189817,
+    "saw_homepage": 0.2742100601921245,
+    "image_picker": -0.025083654463297064,
+    "closed_minibasket_click": -0.07686023800622085,
+    "checked_returns_detail": -0.133008289078587,
+    "list_size_dropdown": -0.15482921044529238,
+    "promo_banner_click": -0.25509954365973353,
+    "sort_by": -0.29685213177657804
+  }
+}

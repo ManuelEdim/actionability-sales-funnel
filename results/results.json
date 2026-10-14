@@ -1,0 +1,241 @@
+{
+  "config": {
+    "random_seed": 42,
+    "validation_fraction": 0.2,
+    "oof_folds": 5,
+    "class_weight": null,
+    "metric_bootstrap": 1000,
+    "bootstrap_resamples": 2000,
+    "ece_bins": 10,
+    "trigger_quantile": 0.7,
+    "assumed_effect_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3
+    ],
+    "friction_weights": {
+      "jitter": 0.6,
+      "velocity": 0.4
+    },
+    "tier_percentile_bands": [
+      [
+        0.0,
+        0.1667
+      ],
+      [
+        0.1667,
+        0.3333
+      ],
+      [
+        0.3333,
+        0.5
+      ],
+      [
+        0.5,
+        0.6667
+      ],
+      [
+        0.6667,
+        0.8333
+      ],
+      [
+        0.8333,
+        1.0
+      ]
+    ],
+    "normalisation_quantile": 0.99,
+    "balabit": {
+      "max_velocity_px_s": 10000
+    }
+  },
+  "scope": {
+    "raw_rows": 455401,
+    "raw_conversion_rate": 0.04192568747104201,
+    "checkout_rows": 36471,
+    "checkout_conversion_rate": 0.5235118313180335,
+    "binary_columns_not_in_register": [
+      "saw_sizecharts",
+      "sign_in",
+      "account_page_click",
+      "saw_account_upgrade",
+      "saw_delivery",
+      "detail_wishlist_add"
+    ]
+  },
+  "discrimination": {
+    "leaked (final + delivery detail)": {
+      "n_features": 16,
+      "roc_auc": 0.9270859604828501,
+      "roc_auc_ci": [
+        0.9201813299255588,
+        0.9333323842158566
+      ],
+      "pr_auc": 0.8961082377829348,
+      "pr_auc_ci": [
+        0.8841613453035694,
+        0.9074789120526287
+      ],
+      "precision": 0.8631265735866331,
+      "recall": 0.9874312647289867
+    },
+    "final, lenient (15 features)": {
+      "n_features": 15,
+      "roc_auc": 0.736513438500671,
+      "roc_auc_ci": [
+        0.7249515437121871,
+        0.7476533738858792
+      ],
+      "pr_auc": 0.7042955629362948,
+      "pr_auc_ci": [
+        0.688243164534763,
+        0.7207093118492688
+      ],
+      "precision": 0.6805970149253732,
+      "recall": 0.7164179104477612
+    },
+    "baseline + basket (8 features)": {
+      "n_features": 8,
+      "roc_auc": 0.732408832826962,
+      "roc_auc_ci": [
+        0.7208878661907185,
+        0.7442665224158453
+      ],
+      "pr_auc": 0.6952287203605485,
+      "pr_auc_ci": [
+        0.678906646033939,
+        0.7111380104140966
+      ],
+      "precision": 0.6772782503037668,
+      "recall": 0.7297721916732128
+    },
+    "baseline only (5 features)": {
+      "n_features": 5,
+      "roc_auc": 0.5755835624132382,
+      "roc_auc_ci": [
+        0.5632654158512083,
+        0.5881101311226824
+      ],
+      "pr_auc": 0.5735118118776455,
+      "pr_auc_ci": [
+        0.5586527950721757,
+        0.5888733138817849
+      ],
+      "precision": 0.5503367600141794,
+      "recall": 0.8130400628436764
+    }
+  },
+  "leave_one_out": {
+    "max_single_feature_auc_drop": 0.03253281168501865,
+    "feature_with_max_drop": "basket_add_detail"
+  },
+  "calibration": {
+    "class-weighted": {
+      "mean_score": 0.5043652415294324,
+      "observed_rate": 0.5235118313180335,
+      "calibration_in_the_large_pp": -1.9146589788601065,
+      "brier": 0.20329459097583216,
+      "brier_ci": [
+        0.20145230692675536,
+        0.20517578290338967
+      ],
+      "ece": 0.064119692758382,
+      "calibration_slope": 1.005171074559288,
+      "calibration_intercept": 0.09401408581241898,
+      "oof_roc_auc": 0.7445004410723757
+    },
+    "unweighted": {
+      "mean_score": 0.5235185152252013,
+      "observed_rate": 0.5235118313180335,
+      "calibration_in_the_large_pp": 0.0006683907167848169,
+      "brier": 0.20244826655144993,
+      "brier_ci": [
+        0.20063957032234472,
+        0.20420808693972997
+      ],
+      "ece": 0.057229232519273976,
+      "calibration_slope": 0.9983749264867977,
+      "calibration_intercept": 0.00010559049418455702,
+      "oof_roc_auc": 0.7445200086917902
+    }
+  },
+  "balabit": {
+    "sessions": 65,
+    "users": 10,
+    "velocity_mean": 385.52877688719707,
+    "velocity_median": 144.22205101855957,
+    "velocity_p90": 994.9435218446704,
+    "jitter_mean": 0.510718962771933,
+    "jitter_median": 0.21866894587394217,
+    "jitter_p90": 1.5707963267948966,
+    "max_velocity_filter_px_s": 10000
+  },
+  "friction_check": {
+    "trigger_rate": 0.2999917742864193,
+    "agreement_balabit_vs_rank_only": 1.0,
+    "tier_distribution": {
+      "0": 17177,
+      "1": 14067,
+      "2": 4514,
+      "3": 654,
+      "4": 59
+    }
+  },
+  "sensitivity": {
+    "slope_kappa": 0.11412542271300882,
+    "static_mean_score": 0.5235185152252013
+  },
+  "trigger_comparison": [
+    {
+      "policy": "friction (declared Balabit construction)",
+      "trigger_rate": 0.2999917742864193,
+      "mean_score_triggered": 0.619571493303524,
+      "mean_headroom_triggered": 0.3804285066964761,
+      "kappa_slope": 0.11412542271300882,
+      "observed_conversion_triggered": 0.6220637967279042
+    },
+    {
+      "policy": "random at matched rate",
+      "trigger_rate": 0.3000191933316882,
+      "mean_score_triggered": 0.5239493284602479,
+      "mean_headroom_triggered": 0.47605067153975217,
+      "kappa_slope": 0.14282433846036488,
+      "observed_conversion_triggered": 0.5234874794370317
+    },
+    {
+      "policy": "lowest model score at matched rate",
+      "trigger_rate": 0.2999917742864193,
+      "mean_score_triggered": 0.2514405064213662,
+      "mean_headroom_triggered": 0.7485594935786338,
+      "kappa_slope": 0.22456169063759787,
+      "observed_conversion_triggered": 0.21067544100173657
+    },
+    {
+      "policy": "highest model score at matched rate",
+      "trigger_rate": 0.2999917742864193,
+      "mean_score_triggered": 0.7742464914827815,
+      "mean_headroom_triggered": 0.22575350851721848,
+      "kappa_slope": 0.06772419557146465,
+      "observed_conversion_triggered": 0.7290010053925601
+    },
+    {
+      "policy": "flags only: tier >= 2 (own rate)",
+      "trigger_rate": 0.14331934962024623,
+      "mean_score_triggered": 0.6482283693789934,
+      "mean_headroom_triggered": 0.3517716306210067,
+      "kappa_slope": 0.050415681315456165,
+      "observed_conversion_triggered": 0.6489382054715899
+    },
+    {
+      "policy": "all sessions (reference)",
+      "trigger_rate": 1.0,
+      "mean_score_triggered": 0.5235185152252013,
+      "mean_headroom_triggered": 0.4764814847747987,
+      "kappa_slope": 0.4764814847747987,
+      "observed_conversion_triggered": 0.5235118313180335
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+feature,role,availability_basis,status
+loc_uk,reward_prior,request/session metadata at session start,baseline available
+returning_user,reward_prior,session metadata at session start,baseline available
+device_mobile,reward_prior,device metadata at session start,baseline available
+device_computer,reward_prior,device metadata at session start,baseline available
+device_tablet,reward_prior,device metadata at session start,baseline available
+saw_homepage,reward_prior,page-view semantics only; no event timestamp,conditionally retained not timestamp-verified
+basket_add_detail,reward_prior,basket interaction expected before checkout; no event timestamp,conditionally retained not timestamp-verified
+basket_add_list,reward_prior,basket interaction expected before checkout; no event timestamp,conditionally retained not timestamp-verified
+basket_icon_click,reward_prior,basket interaction expected before checkout; no event timestamp,conditionally retained not timestamp-verified
+image_picker,reward_prior,interaction semantics only; no event timestamp,conditionally retained not timestamp-verified
+closed_minibasket_click,reward_prior+friction_flag,interaction semantics only; no event timestamp,conditionally retained not timestamp-verified
+checked_returns_detail,reward_prior+friction_flag,interaction semantics only; no event timestamp,conditionally retained not timestamp-verified
+list_size_dropdown,reward_prior+friction_flag,interaction semantics only; no event timestamp,conditionally retained not timestamp-verified
+promo_banner_click,reward_prior+friction_flag,interaction semantics only; no event timestamp,conditionally retained not timestamp-verified
+sort_by,reward_prior+friction_flag,interaction semantics only; no event timestamp,conditionally retained not timestamp-verified
+checked_delivery_detail,excluded,near-terminal delivery-detail interaction,rejected as non-actionable
+saw_checkout,scope_only,defines checkout-entered population,not a predictor after scoping
+ordered,outcome,purchase completion,target only
+sign_in,screened_excluded,account/session state; near-constant among checkout entrants (99.4% vs 97.6%; lift 1.02),excluded: near-constant after scoping; adding all six screened columns changes holdout ROC-AUC by +0.002
+account_page_click,screened_excluded,interaction semantics only; no event timestamp; lift 0.99,excluded: no association with outcome; sparse (2.0%)
+saw_delivery,screened_excluded,page-view semantics; no event timestamp; lift 0.76 (inverse),excluded: inverse and sparse (1.7-2.2%); not a near-terminal proxy unlike checked_delivery_detail
+detail_wishlist_add,screened_excluded,interaction semantics only; no event timestamp; lift 0.55,excluded: sparse (1.0-1.8%)
+saw_account_upgrade,screened_excluded,page-view semantics; lift 0.92,excluded: sparse (0.5%)
+saw_sizecharts,screened_excluded,page-view semantics; lift 1.06,excluded: sparse (0.1%)
