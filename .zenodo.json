@@ -1,0 +1,14 @@
+{
+  "title": "Reproducibility package: Actionability-Aware Reward Modelling and Sensitivity Analysis for Sales-Funnel Interventions",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {"name": "Edim, Emmanuel Okang", "affiliation": "University of Greater Manchester"},
+    {"name": "Iwendi, Celestine", "affiliation": "University of Greater Manchester"},
+    {"name": "Nikatsekpe, Temienor Philip Neris", "affiliation": "University of Greater Manchester"},
+    {"name": "Olajide, Funminiyi A.", "affiliation": "Pennsylvania State University"},
+    {"name": "Osamor, Jude", "affiliation": "Barclays Bank"},
+    {"name": "Ekiye, Ayibatonbo Ebiare", "affiliation": "University of Greater Manchester"}
+  ],
+  "keywords": ["actionability", "data leakage", "e-commerce", "sensitivity analysis", "reproducibility"]
+}
